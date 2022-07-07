@@ -1,0 +1,12 @@
+E:\Visual Studio\LockdownMode\src\LockdownMode\bin\Debug\LockdownMode.exe.config
+E:\Visual Studio\LockdownMode\src\LockdownMode\bin\Debug\LockdownMode.exe
+E:\Visual Studio\LockdownMode\src\LockdownMode\bin\Debug\LockdownMode.pdb
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.AssemblyReference.cache
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.SuggestedBindingRedirects.cache
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.FrmScreen.resources
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.FrmMain.resources
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.Properties.Resources.resources
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.GenerateResource.cache
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.CoreCompileInputs.cache
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.exe
+E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.pdb
