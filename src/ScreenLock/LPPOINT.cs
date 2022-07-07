@@ -1,5 +1,5 @@
 ﻿
-namespace ScreenLock
+namespace LockdownMode
 {
    using System.Runtime.InteropServices;
    

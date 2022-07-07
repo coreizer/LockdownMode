@@ -22,7 +22,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace ScreenLock
+namespace LockdownMode
 {
   static class Program
   {

@@ -1,0 +1,12 @@
+E:\Visual Studio\ScreenLock\src\ScreenLock\bin\Debug\LockdownMode.exe.config
+E:\Visual Studio\ScreenLock\src\ScreenLock\bin\Debug\LockdownMode.exe
+E:\Visual Studio\ScreenLock\src\ScreenLock\bin\Debug\LockdownMode.pdb
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.csproj.AssemblyReference.cache
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.csproj.SuggestedBindingRedirects.cache
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.Properties.Resources.resources
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.csproj.GenerateResource.cache
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.csproj.CoreCompileInputs.cache
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.exe
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.pdb
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.FrmScreen.resources
+E:\Visual Studio\ScreenLock\src\ScreenLock\obj\Debug\LockdownMode.FrmMain.resources

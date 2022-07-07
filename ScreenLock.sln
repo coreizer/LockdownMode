@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenLock", "src\ScreenLock\ScreenLock.csproj", "{0C5B3515-6DC2-426B-87FE-F59F18834ACD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LockdownMode", "src\ScreenLock\LockdownMode.csproj", "{0C5B3515-6DC2-426B-87FE-F59F18834ACD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,5 +18,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A7A36E6-7555-4463-9756-BD1452BBB112}
 	EndGlobalSection
 EndGlobal

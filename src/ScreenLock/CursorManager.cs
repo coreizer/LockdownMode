@@ -19,13 +19,12 @@
 
 #endregion
 
-namespace ScreenLock
+namespace LockdownMode
 {
    using System;
    using System.Drawing;
    using System.Runtime.InteropServices;
 
-   [ComVisible(true)]
    public sealed class CursorManager
    {
       private Point leftMost = new Point(0, 0);

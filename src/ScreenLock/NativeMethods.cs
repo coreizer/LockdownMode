@@ -23,7 +23,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Runtime.Versioning;
 
-namespace ScreenLock
+namespace LockdownMode
 {
    public class NativeMethods
    {

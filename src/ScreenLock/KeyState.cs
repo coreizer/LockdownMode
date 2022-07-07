@@ -21,7 +21,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace ScreenLock
+namespace LockdownMode
 {
   [ComVisible(true)]
   public struct KeyState

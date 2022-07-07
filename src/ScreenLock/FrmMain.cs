@@ -19,7 +19,7 @@
 
 #endregion
 
-namespace ScreenLock
+namespace LockdownMode
 {
    using System;
    using System.Collections.Generic;
@@ -32,37 +32,17 @@ namespace ScreenLock
    
    public partial class FrmMain : Form
    {
-      private IntPtr hookPtr;
-      private NativeMethods.HookProc hookDelegate;
-      private EventHandler unLocking;
+      private readonly CursorManager cursor = new CursorManager();
+      private readonly List<FrmScreen> monitorCollection = new List<FrmScreen>();
 
-      private CursorManager cursorManager = new CursorManager();
+      private IntPtr hookPtr;
+      private NativeMethods.HookProc keyTrigger;
       private KeyState keyState = new KeyState();
-      private List<FrmScreen> screenCollection = new List<FrmScreen>();
 
       public FrmMain()
       {
          this.InitializeComponent();
-         this.unLocking += this.OnUnlocking;
-      }
-
-      private void OnUnlocking()
-      {
-         this.unLocking?.Invoke(this, new EventArgs());
-      }
-
-      private void OnUnlocking(object sender, EventArgs e)
-      {
-         if (this.hookPtr != IntPtr.Zero) {
-            NativeMethods.UnhookWindowsHookEx(this.hookPtr);
-            Trace.WriteLine("キーボードフックを解除しました (2)", "KeyboardHook");
-         }
-
-         this.timerCursorBlocker.Stop();
-         this.screenCollection.ForEach(x => x.Close());
-         this.cursorManager.Show();
-         this.keyState.Reset();
-         this.Show();
+         this.Text = $"{Application.ProductName} by coreizer | {Application.ProductVersion}";
       }
 
       private bool KeyboardHook()
@@ -73,12 +53,13 @@ namespace ScreenLock
                Trace.WriteLine("キーボードフックを解除しました (1)", "KeyboardHook");
             }
 
-            IntPtr hMod = Marshal.GetHINSTANCE(Assembly.GetExecutingAssembly().GetModules()[0]);
-            this.hookDelegate = new NativeMethods.HookProc(this.HookCallback);
-            this.hookPtr = NativeMethods.SetWindowsHookEx(NativeMethods.WH_KEYBOARD_LL, this.hookDelegate, hMod, 0);
+            this.keyTrigger = new NativeMethods.HookProc(this.HookCallback);
+            Module[] modules = Assembly.GetExecutingAssembly().GetModules();
+            IntPtr hmod = Marshal.GetHINSTANCE(modules.First());
+            this.hookPtr = NativeMethods.SetWindowsHookEx(NativeMethods.WH_KEYBOARD_LL, this.keyTrigger, hmod, 0);
+            
             if (this.hookPtr == IntPtr.Zero) {
-               var errorCode = Marshal.GetLastWin32Error();
-               throw new Win32Exception(errorCode);
+               throw new Win32Exception(Marshal.GetLastWin32Error());
             }
 
             Trace.WriteLine("キーボードフックを開始しました (1)", "KeyboardHook");
@@ -91,14 +72,6 @@ namespace ScreenLock
          return false;
       }
 
-      protected override void OnClosing(CancelEventArgs e)
-      {
-         base.OnClosing(e);
-         if (this.hookPtr != IntPtr.Zero) {
-            NativeMethods.UnhookWindowsHookEx(this.hookPtr);
-         }
-      }
-
       private int HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
       {
          if (nCode < 0) {
@@ -106,9 +79,10 @@ namespace ScreenLock
          }
 
          Trace.WriteLine("キーを検知", "Callback");
-         var os = Environment.OSVersion;
-         var kbd = (NativeMethods.KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(NativeMethods.KBDLLHOOKSTRUCT));
-         if ((os.Version.Major == 6 && os.Version.Minor >= 2) || os.Version.Major > 6) {
+         OperatingSystem osVersion = Environment.OSVersion;
+         NativeMethods.KBDLLHOOKSTRUCT kbd = (NativeMethods.KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(NativeMethods.KBDLLHOOKSTRUCT));
+
+         if ((osVersion.Version.Major == 6 && osVersion.Version.Minor >= 2) || osVersion.Version.Major > 6) {
             if (kbd.vkCode == NativeMethods.VK_LSHIFT || kbd.vkCode == NativeMethods.VK_RSHIFT) {
                this.keyState.Shift = true;
             }
@@ -122,38 +96,53 @@ namespace ScreenLock
             if (this.keyState.IsHotKeyPressed()) {
                if (kbd.vkCode == NativeMethods.VK_DELETE) {
                   this.keyState.Delete = true;
-                  this.OnUnlocking();
+                  this.UnLockDownMode();
                   return NativeMethods.CallNextHookEx(this.hookPtr, nCode, wParam, lParam);
                }
             }
          }
          else {
-            this.keyState.Shift = this.IsKeyPressed(NativeMethods.VK_LSHIFT);
-            this.keyState.Ctrl = this.IsKeyPressed(NativeMethods.VK_LCONTROL);
             this.keyState.Alt = this.IsKeyPressed(NativeMethods.VK_LMENU);
+            this.keyState.Ctrl = this.IsKeyPressed(NativeMethods.VK_LCONTROL);
+            this.keyState.Shift = this.IsKeyPressed(NativeMethods.VK_LSHIFT);
 
             if (this.keyState.IsHotKeyPressed()) {
                if (this.IsKeyPressed(NativeMethods.VK_DELETE)) {
                   this.keyState.Delete = true;
-                  this.OnUnlocking();
+                  this.UnLockDownMode();
                   return NativeMethods.CallNextHookEx(this.hookPtr, nCode, wParam, lParam);
                }
             }
          }
-         return 1;
+
+         return -1;
       }
 
-      private void ButtonBlocker_Click(object sender, EventArgs e)
+      private void UnLockDownMode()
+      {
+         if (this.hookPtr != IntPtr.Zero) {
+            NativeMethods.UnhookWindowsHookEx(this.hookPtr);
+            Trace.WriteLine("キーボードフックを解除しました (2)", "KeyboardHook");
+         }
+
+         this.timerCursor.Stop();
+         this.monitorCollection.ForEach(x => x.Close());
+         this.cursor.Show();
+         this.keyState.Reset();
+         this.Show();
+      }
+
+      private void buttonLockdownMode_Click(object sender, EventArgs e)
       {
          try {
             if (this.KeyboardHook()) {
                this.Hide();
-               this.cursorManager.Hide();
-               this.ScreenBlocker();
-               if (this.timerCursorBlocker.Enabled) {
-                  this.timerCursorBlocker.Stop();
+               this.cursor.Hide();
+               this.Monitors();
+               if (this.timerCursor.Enabled) {
+                  this.timerCursor.Stop();
                }
-               this.timerCursorBlocker.Start();
+               this.timerCursor.Start();
             }
             else {
                MessageBox.Show("キーボードフックに失敗しました。(win32)", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -164,39 +153,39 @@ namespace ScreenLock
          }
       }
 
+      public void Monitors()
+      {
+         this.monitorCollection.Clear();
+         Screen.AllScreens.ToList().ForEach(x =>
+         {
+            FrmScreen formScreen = new FrmScreen() { Bounds = x.Bounds };
+            formScreen.Show(this);
+            this.monitorCollection.Add(formScreen);
+         });
+      }
+
       public bool IsKeyPressed(int keyCode)
       {
          return (NativeMethods.GetAsyncKeyState(keyCode) & 0x8000) > 0;
       }
 
-      public void ScreenBlocker()
+      private void TimerCursor_Tick(object sender, EventArgs e)
       {
-         this.screenCollection.Clear();
-         Screen.AllScreens.ToList().ForEach(s =>
-         {
-            var form = new FrmScreen()
-            {
-               Bounds = s.Bounds
-            };
-            form.Show(this);
-            this.screenCollection.Add(form);
-         });
-      }
-
-      public void SetWindowOpacity(double opacity)
-      {
-         this.Opacity = opacity;
-         this.screenCollection.ForEach(s => s.Opacity = opacity);
-      }
-
-      private void TimerCursorBlocker_Tick(object sender, EventArgs e)
-      {
-         this.cursorManager.LeftMost();
+         this.cursor.LeftMost();
       }
 
       private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
       {
          MessageBox.Show($"バージョン: {Application.ProductVersion}", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+      }
+
+      protected override void OnClosing(CancelEventArgs e)
+      {
+         if (this.hookPtr != IntPtr.Zero) {
+            NativeMethods.UnhookWindowsHookEx(this.hookPtr);
+         }
+
+         base.OnClosing(e);
       }
    }
 }
