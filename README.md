@@ -14,8 +14,11 @@ LockdownModeはマウスやキーボード類のデバイスを一時的に無�
 - キーボードの入力阻止
 - マウスのカーソルを真ん中に固定する
 
-## スクリーンショット
+### スクリーンショット
 ![ScreenShot](./docs/screenshot.png)
 
-## 作成者
+### 作成者
 - [Twitter](https://www.twitter.com/coreizer)
+
+### ライセンス
+[GNU General Public License v3.0](LICENSE)
