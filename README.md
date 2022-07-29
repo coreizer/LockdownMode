@@ -3,12 +3,12 @@
 
 LockdownModeはマウスやキーボード類のデバイスを一時的に無効化する機能を提供します。
 
-## 機能
+### 機能
 - キーボードの入力阻止
 - マウスのカーソルを真ん中に固定する
 
-## スクリーンショット
+### スクリーンショット
 ![ScreenShot](./docs/screenshot.png)
 
-## 作成者
+### 作成者
 - [Twitter](https://www.twitter.com/coreizer)
