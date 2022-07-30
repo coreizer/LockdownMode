@@ -26,3 +26,4 @@ coreizer
 
 ### ライセンス
 [GPL v3.0 licensed.](LICENSE)
+。
