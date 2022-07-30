@@ -25,5 +25,4 @@ LockdownModeはマウスやキーボード類のデバイスを一時的に無�
 coreizer
 
 ### ライセンス
-[GPL v3.0 licensed.](LICENSE)
-。
+このプロジェクトのライセンスは GPL (GNU General Public License) です。 詳細については[ライセンスファイル](LICENSE)を見てください。
