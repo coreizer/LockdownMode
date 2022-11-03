@@ -3,16 +3,16 @@
 
 LockdownModeはマウスやキーボード類のデバイスを一時的に無効化する機能を提供します。
 
+## 機能
+- キーボードの入力阻止
+- マウスのカーソルを真ん中に固定する
+
 ## 使用方法
  1. LockdownMode.exe を起動します
  2. キーボードとマウスをロックする
  
 ## 解除方法
  1. キーボードのキー「Ctrl」+「Shift」+「Delete」
-
-## 機能
-- キーボードの入力阻止
-- マウスのカーソルを真ん中に固定する
 
 ## スクリーンショット
 ![ScreenShot](./docs/screenshot.png)
@@ -25,4 +25,4 @@ LockdownModeはマウスやキーボード類のデバイスを一時的に無�
 coreizer
 
 ### ライセンス
-[GPL v3 licensed.](LICENSE)
+このプロジェクトのライセンスは GPL (GNU General Public License) です。 詳細については[ライセンスファイル](LICENSE)を見てください。
