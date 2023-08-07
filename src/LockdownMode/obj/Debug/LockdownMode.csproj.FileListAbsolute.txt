@@ -10,3 +10,15 @@ E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.Gen
 E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.CoreCompileInputs.cache
 E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.exe
 E:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.pdb
+D:\Visual Studio\LockdownMode\src\LockdownMode\bin\Debug\LockdownMode.exe.config
+D:\Visual Studio\LockdownMode\src\LockdownMode\bin\Debug\LockdownMode.exe
+D:\Visual Studio\LockdownMode\src\LockdownMode\bin\Debug\LockdownMode.pdb
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.AssemblyReference.cache
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.SuggestedBindingRedirects.cache
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.FrmScreen.resources
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.FrmMain.resources
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.Properties.Resources.resources
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.GenerateResource.cache
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.csproj.CoreCompileInputs.cache
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.exe
+D:\Visual Studio\LockdownMode\src\LockdownMode\obj\Debug\LockdownMode.pdb

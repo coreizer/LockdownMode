@@ -23,7 +23,6 @@ namespace LockdownMode
 {
    using System;
    using System.Drawing;
-   using System.Runtime.InteropServices;
 
    public sealed class CursorManager
    {
@@ -32,27 +31,25 @@ namespace LockdownMode
       public Point Position
       {
          get {
-            LPPOINT point = new LPPOINT();
+            var point = new LPPOINT();
             NativeMethods.GetCursorPos(point);
             return new Point(point.X, point.Y);
          }
-         set {
-            NativeMethods.SetCursorPos(value.X, value.Y);
-         }
+         set => NativeMethods.SetCursorPos(value.X, value.Y);
       }
 
       public Point Point { get; private set; }
 
       public void LeftMost()
       {
-         this.Position = this.leftMost;
+         Position = leftMost;
       }
 
       public Point SetCursorPosition
       {
          set {
             if (value == null) throw new ArgumentNullException(nameof(value));
-            this.Point = value;
+            Point = value;
          }
       }
 
@@ -60,18 +57,18 @@ namespace LockdownMode
 
       public CursorManager(Point point)
       {
-         this.Point = point;
+         Point = point;
       }
 
       public void Show()
       {
-         NativeMethods.SetCursorPos(this.Point.X, this.Point.Y);
+         NativeMethods.SetCursorPos(Point.X, Point.Y);
          NativeMethods.ShowCursor(true);
       }
 
       public void Hide()
       {
-         this.Point = this.Position;
+         Point = Position;
          NativeMethods.ShowCursor(false);
       }
    }

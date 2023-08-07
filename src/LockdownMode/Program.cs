@@ -19,22 +19,22 @@
 
 #endregion
 
-using System;
-using System.Windows.Forms;
-
 namespace LockdownMode
 {
-  static class Program
-  {
-    /// <summary>
-    /// アプリケーションのメイン エントリ ポイントです。
-    /// </summary>
-    [STAThread]
-    static void Main()
-    {
-      Application.EnableVisualStyles();
-      Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run(new FrmMain());
-    }
-  }
+   using System;
+   using System.Windows.Forms;
+
+   static class Program
+   {
+      /// <summary>
+      /// アプリケーションのメイン エントリ ポイントです。
+      /// </summary>
+      [STAThread]
+      static void Main()
+      {
+         Application.EnableVisualStyles();
+         Application.SetCompatibleTextRenderingDefault(false);
+         Application.Run(new FrmMain());
+      }
+   }
 }

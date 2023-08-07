@@ -2,7 +2,7 @@
 namespace LockdownMode
 {
    using System.Runtime.InteropServices;
-   
+
    [StructLayout(LayoutKind.Sequential)]
    public class LPPOINT
    {
@@ -13,8 +13,8 @@ namespace LockdownMode
 
       public LPPOINT(int x, int y)
       {
-         this.X = x;
-         this.Y = y;
+         X = x;
+         Y = y;
       }
    }
 }
