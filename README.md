@@ -2,8 +2,7 @@
 
 [![Build status](https://ci.appveyor.com/api/projects/status/m1swbs685ntqw01w?svg=true)](https://ci.appveyor.com/project/coreizer/lockdownmode)
 
-LockdownMode はマウスやキーボード類のデバイスを一時的に無効化する機能を提供します。
-
+LockdownModeはマウスやキーボード類のデバイスを一時的に無効化するソフトウェア
 ## 機能
 
 - キーボードの入力阻止
