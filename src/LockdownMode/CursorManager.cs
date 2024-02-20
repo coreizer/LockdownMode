@@ -40,35 +40,29 @@ namespace LockdownMode
 
       public Point Point { get; private set; }
 
-      public void LeftMost()
-      {
-         Position = leftMost;
-      }
+      public void LeftMost() => this.Position = this.leftMost;
 
       public Point SetCursorPosition
       {
          set {
             if (value == null) throw new ArgumentNullException(nameof(value));
-            Point = value;
+            this.Point = value;
          }
       }
 
       public CursorManager() { }
 
-      public CursorManager(Point point)
-      {
-         Point = point;
-      }
+      public CursorManager(Point point) => this.Point = point;
 
       public void Show()
       {
-         NativeMethods.SetCursorPos(Point.X, Point.Y);
+         NativeMethods.SetCursorPos(this.Point.X, this.Point.Y);
          NativeMethods.ShowCursor(true);
       }
 
       public void Hide()
       {
-         Point = Position;
+         this.Point = this.Position;
          NativeMethods.ShowCursor(false);
       }
    }

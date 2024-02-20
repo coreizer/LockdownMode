@@ -24,7 +24,6 @@ namespace LockdownMode
    using System;
    using System.Collections.Generic;
    using System.ComponentModel;
-   using System.Diagnostics;
    using System.Linq;
    using System.Reflection;
    using System.Runtime.InteropServices;
@@ -33,7 +32,7 @@ namespace LockdownMode
    public partial class FrmMain : Form
    {
       private readonly CursorManager cursor = new CursorManager();
-      private readonly List<FrmScreen> monitorCollection = new List<FrmScreen>();
+      private readonly List<FrmScreen> monitors = new List<FrmScreen>();
 
       private IntPtr hookPtr;
       private NativeMethods.HookProc keyTrigger;
@@ -41,28 +40,21 @@ namespace LockdownMode
 
       public FrmMain()
       {
-         InitializeComponent();
-         Text = $"{Application.ProductName} by coreizer | {Application.ProductVersion}";
+         this.InitializeComponent();
+         this.Text = $"{Application.ProductName} by coreizer | {Application.ProductVersion}";
       }
 
       private bool KeyboardHook()
       {
          try {
-            if (hookPtr != IntPtr.Zero) {
-               NativeMethods.UnhookWindowsHookEx(hookPtr);
-               Trace.WriteLine("キーボードフックを解除しました (1)", "KeyboardHook");
-            }
+            if (this.hookPtr != IntPtr.Zero) NativeMethods.UnhookWindowsHookEx(this.hookPtr);
 
-            keyTrigger = new NativeMethods.HookProc(HookCallback);
+            this.keyTrigger = new NativeMethods.HookProc(this.HookCallback);
             var modules = Assembly.GetExecutingAssembly().GetModules();
             var hmod = Marshal.GetHINSTANCE(modules.First());
-            hookPtr = NativeMethods.SetWindowsHookEx(NativeMethods.WH_KEYBOARD_LL, keyTrigger, hmod, 0);
+            this.hookPtr = NativeMethods.SetWindowsHookEx(NativeMethods.WH_KEYBOARD_LL, this.keyTrigger, hmod, 0);
 
-            if (hookPtr == IntPtr.Zero) {
-               throw new Win32Exception(Marshal.GetLastWin32Error());
-            }
-
-            Trace.WriteLine("キーボードフックを開始しました (1)", "KeyboardHook");
+            if (this.hookPtr == IntPtr.Zero) throw new Win32Exception(Marshal.GetLastWin32Error());
             return true;
          }
          catch (Exception ex) {
@@ -74,43 +66,40 @@ namespace LockdownMode
 
       private int HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
       {
-         if (nCode < 0) {
-            return NativeMethods.CallNextHookEx(hookPtr, nCode, wParam, lParam);
-         }
+         if (nCode < 0) return NativeMethods.CallNextHookEx(this.hookPtr, nCode, wParam, lParam);
 
-         Trace.WriteLine("キーを検知", "Callback");
          var osVersion = Environment.OSVersion;
          var kbd = (NativeMethods.KBDLLHOOKSTRUCT)Marshal.PtrToStructure(lParam, typeof(NativeMethods.KBDLLHOOKSTRUCT));
 
          if ((osVersion.Version.Major == 6 && osVersion.Version.Minor >= 2) || osVersion.Version.Major > 6) {
             if (kbd.vkCode == NativeMethods.VK_LSHIFT || kbd.vkCode == NativeMethods.VK_RSHIFT) {
-               keyState.Shift = true;
+               this.keyState.Shift = true;
             }
             if (kbd.vkCode == NativeMethods.VK_LCONTROL || kbd.vkCode == NativeMethods.VK_RCONTROL) {
-               keyState.Ctrl = true;
+               this.keyState.Ctrl = true;
             }
             if (kbd.vkCode == NativeMethods.VK_LMENU || kbd.vkCode == NativeMethods.VK_RMENU) {
-               keyState.Alt = true;
+               this.keyState.Alt = true;
             }
 
-            if (keyState.IsHotKeyPressed()) {
+            if (this.keyState.IsHotKeyPressed()) {
                if (kbd.vkCode == NativeMethods.VK_DELETE) {
-                  keyState.Delete = true;
-                  UnLockDownMode();
-                  return NativeMethods.CallNextHookEx(hookPtr, nCode, wParam, lParam);
+                  this.keyState.Delete = true;
+                  this.ScreenUnlock();
+                  return NativeMethods.CallNextHookEx(this.hookPtr, nCode, wParam, lParam);
                }
             }
          }
          else {
-            keyState.Alt = IsKeyPressed(NativeMethods.VK_LMENU);
-            keyState.Ctrl = IsKeyPressed(NativeMethods.VK_LCONTROL);
-            keyState.Shift = IsKeyPressed(NativeMethods.VK_LSHIFT);
+            this.keyState.Ctrl = this.IsKeyPressed(NativeMethods.VK_LCONTROL);
+            this.keyState.Alt = this.IsKeyPressed(NativeMethods.VK_LMENU);
+            this.keyState.Shift = this.IsKeyPressed(NativeMethods.VK_LSHIFT);
 
-            if (keyState.IsHotKeyPressed()) {
-               if (IsKeyPressed(NativeMethods.VK_DELETE)) {
-                  keyState.Delete = true;
-                  UnLockDownMode();
-                  return NativeMethods.CallNextHookEx(hookPtr, nCode, wParam, lParam);
+            if (this.keyState.IsHotKeyPressed()) {
+               if (this.IsKeyPressed(NativeMethods.VK_DELETE)) {
+                  this.keyState.Delete = true;
+                  this.ScreenUnlock();
+                  return NativeMethods.CallNextHookEx(this.hookPtr, nCode, wParam, lParam);
                }
             }
          }
@@ -118,31 +107,28 @@ namespace LockdownMode
          return -1;
       }
 
-      private void UnLockDownMode()
+      public void ScreenUnlock()
       {
-         if (hookPtr != IntPtr.Zero) {
-            NativeMethods.UnhookWindowsHookEx(hookPtr);
-            Trace.WriteLine("キーボードフックを解除しました (2)", "KeyboardHook");
-         }
+         if (this.hookPtr != IntPtr.Zero) NativeMethods.UnhookWindowsHookEx(this.hookPtr);
 
-         timerCursor.Stop();
-         monitorCollection.ForEach(x => x.Close());
-         cursor.Show();
-         keyState.Reset();
-         Show();
+         this.timerCursor.Stop();
+         this.monitors.ForEach(x => x.Close());
+         this.cursor.Show();
+         this.keyState.Reset();
+         this.Show();
       }
 
       private void buttonLockdownMode_Click(object sender, EventArgs e)
       {
          try {
-            if (KeyboardHook()) {
-               Hide();
-               cursor.Hide();
-               Monitors();
-               if (timerCursor.Enabled) {
-                  timerCursor.Stop();
+            if (this.KeyboardHook()) {
+               this.Hide();
+               this.cursor.Hide();
+               this.Monitors();
+               if (this.timerCursor.Enabled) {
+                  this.timerCursor.Stop();
                }
-               timerCursor.Start();
+               this.timerCursor.Start();
             }
             else {
                MessageBox.Show("キーボードフックに失敗しました。(win32)", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -155,23 +141,19 @@ namespace LockdownMode
 
       public void Monitors()
       {
-         monitorCollection.Clear();
+         this.monitors.Clear();
          Screen.AllScreens.ToList().ForEach(x => {
             var formScreen = new FrmScreen() { Bounds = x.Bounds };
             formScreen.Show(this);
-            monitorCollection.Add(formScreen);
+            this.monitors.Add(formScreen);
          });
       }
 
-      public bool IsKeyPressed(int keyCode)
-      {
-         return (NativeMethods.GetAsyncKeyState(keyCode) & 0x8000) > 0;
-      }
+      public bool IsKeyPressed(int keyCode) =>
+         (NativeMethods.GetAsyncKeyState(keyCode) & 0x8000) > 0;
 
-      private void TimerCursor_Tick(object sender, EventArgs e)
-      {
-         cursor.LeftMost();
-      }
+      private void TimerCursor_Tick(object sender, EventArgs e) =>
+         this.cursor.LeftMost();
 
       private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
       {
@@ -180,10 +162,7 @@ namespace LockdownMode
 
       protected override void OnClosing(CancelEventArgs e)
       {
-         if (hookPtr != IntPtr.Zero) {
-            NativeMethods.UnhookWindowsHookEx(hookPtr);
-         }
-
+         if (this.hookPtr != IntPtr.Zero) NativeMethods.UnhookWindowsHookEx(this.hookPtr);
          base.OnClosing(e);
       }
    }

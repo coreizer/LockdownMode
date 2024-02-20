@@ -13,8 +13,8 @@ namespace LockdownMode
 
       public LPPOINT(int x, int y)
       {
-         X = x;
-         Y = y;
+         this.X = x;
+         this.Y = y;
       }
    }
 }
