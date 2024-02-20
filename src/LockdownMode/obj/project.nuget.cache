@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "LM6wrBMEWfllLsLOP7w6fuua/56kS8IqTygGxY4yKyW3Xug3qojje/FG1w/KZ7C5T2hFYBm4KHS3oQpCDTJcGg==",
+  "success": true,
+  "projectFilePath": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\LockdownMode.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\corei\\.nuget\\packages\\microsoft.dependencyvalidation.analyzers\\0.11.0\\microsoft.dependencyvalidation.analyzers.0.11.0.nupkg.sha512"
+  ],
+  "logs": []
+}

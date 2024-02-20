@@ -19,29 +19,29 @@
 
 #endregion
 
-using System.Runtime.InteropServices;
-
 namespace LockdownMode
 {
-   [ComVisible(true)]
-   public struct KeyState
-   {
-      public bool Ctrl;
-      public bool Shift;
-      public bool Alt;
-      public bool Delete;
+    using System.Runtime.InteropServices;
 
-      public bool IsHotKeyPressed()
-      {
-         return (Ctrl && Shift && Alt);
-      }
+    [ComVisible(true)]
+    public struct KeyState
+    {
+        public bool Ctrl;
+        public bool Shift;
+        public bool Alt;
+        public bool Delete;
 
-      public void Reset()
-      {
-         Ctrl = false;
-         Shift = false;
-         Alt = false;
-         Delete = false;
-      }
-   }
+        public bool IsHotKeyPressed()
+        {
+            return (this.Ctrl && this.Shift && this.Alt);
+        }
+
+        public void Reset()
+        {
+            this.Ctrl = false;
+            this.Shift = false;
+            this.Alt = false;
+            this.Delete = false;
+        }
+    }
 }
