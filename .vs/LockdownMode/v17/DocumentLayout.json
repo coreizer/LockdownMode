@@ -3,7 +3,30 @@
   "WorkspaceRootPath": "D:\\Visual Studio\\LockdownMode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\nativemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\nativemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D08946F-7C12-425F-9519-E14D5A9D6F9F}|src\\TestProject\\TestProject.csproj|d:\\visual studio\\lockdownmode\\src\\testproject\\cursormanagerunittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D08946F-7C12-425F-9519-E14D5A9D6F9F}|src\\TestProject\\TestProject.csproj|solutionrelative:src\\testproject\\cursormanagerunittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LockdownMode||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D08946F-7C12-425F-9519-E14D5A9D6F9F}|src\\TestProject\\TestProject.csproj|d:\\visual studio\\lockdownmode\\src\\testproject\\testproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9D08946F-7C12-425F-9519-E14D5A9D6F9F}|src\\TestProject\\TestProject.csproj|solutionrelative:src\\testproject\\testproject.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\keystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\keystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|d:\\visual studio\\lockdownmode\\src\\lockdownmode\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\frmmain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,31 +42,12 @@
       "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\frmscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\keystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\keystate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\lppoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\lppoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\nativemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\nativemethods.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9D08946F-7C12-425F-9519-E14D5A9D6F9F}|src\\TestProject\\TestProject.csproj|d:\\visual studio\\lockdownmode\\src\\testproject\\cursormanagerunittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D08946F-7C12-425F-9519-E14D5A9D6F9F}|src\\TestProject\\TestProject.csproj|solutionrelative:src\\testproject\\cursormanagerunittest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|d:\\visual studio\\lockdownmode\\src\\lockdownmode\\cursormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\cursormanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|LockdownMode||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\properties\\resources.resx||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -52,6 +56,9 @@
     {
       "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|D:\\Visual Studio\\LockdownMode\\src\\lockdownmode\\resources\\message.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
       "RelativeMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|solutionrelative:src\\lockdownmode\\resources\\message.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0C5B3515-6DC2-426B-87FE-F59F18834ACD}|src\\LockdownMode\\LockdownMode.csproj|d:\\visual studio\\lockdownmode\\src\\lockdownmode\\||{B270807C-D8C6-49EB-8EBE-8E8D566637A1}|5e9a8ac2-4f34-4521-858f-4c248ba31532"
     }
   ],
   "DocumentGroupContainers": [
@@ -61,36 +68,41 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 6,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 3,
+              "Title": "TestProject",
+              "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\TestProject\\TestProject.csproj",
+              "RelativeDocumentMoniker": "src\\TestProject\\TestProject.csproj",
+              "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\TestProject\\TestProject.csproj",
+              "RelativeToolTip": "src\\TestProject\\TestProject.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-27T19:56:06.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "CursorManagerUnitTest.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\TestProject\\CursorManagerUnitTest.cs",
               "RelativeDocumentMoniker": "src\\TestProject\\CursorManagerUnitTest.cs",
               "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\TestProject\\CursorManagerUnitTest.cs",
               "RelativeToolTip": "src\\TestProject\\CursorManagerUnitTest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAWAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T21:06:21.204Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FrmMain.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmMain.cs",
-              "RelativeDocumentMoniker": "src\\LockdownMode\\FrmMain.cs",
-              "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmMain.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "RelativeToolTip": "src\\LockdownMode\\FrmMain.cs [\u30C7\u30B6\u30A4\u30F3]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-20T20:44:42.798Z",
-              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Resources.resx",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\Properties\\Resources.resx",
               "RelativeDocumentMoniker": "src\\LockdownMode\\Properties\\Resources.resx",
@@ -103,7 +115,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "message.png",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\Resources\\message.png",
               "RelativeDocumentMoniker": "src\\LockdownMode\\Resources\\message.png",
@@ -114,7 +126,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\Program.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\Program.cs",
@@ -127,20 +139,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "NativeMethods.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\NativeMethods.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\NativeMethods.cs",
               "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\NativeMethods.cs",
               "RelativeToolTip": "src\\LockdownMode\\NativeMethods.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAAAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T10:32:42.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "LPPOINT.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\LPPOINT.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\LPPOINT.cs",
@@ -153,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "KeyState.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\KeyState.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\KeyState.cs",
@@ -166,7 +178,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 9,
               "Title": "FrmScreen.cs [\u30C7\u30B6\u30A4\u30F3]",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmScreen.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\FrmScreen.cs",
@@ -178,7 +190,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "FrmScreen.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmScreen.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\FrmScreen.cs",
@@ -191,27 +203,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "FrmMain.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmMain.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\FrmMain.cs",
               "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmMain.cs",
               "RelativeToolTip": "src\\LockdownMode\\FrmMain.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAQwB4AAAABAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAB4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-02-20T20:44:44.013Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "LockdownMode",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\LockdownMode.csproj",
               "RelativeDocumentMoniker": "src\\LockdownMode\\LockdownMode.csproj",
               "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\LockdownMode.csproj",
               "RelativeToolTip": "src\\LockdownMode\\LockdownMode.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-02-20T10:33:51.153Z"
+              "WhenOpened": "2024-02-20T10:33:51.153Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FrmMain.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmMain.cs",
+              "RelativeDocumentMoniker": "src\\LockdownMode\\FrmMain.cs",
+              "ToolTip": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\FrmMain.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "RelativeToolTip": "src\\LockdownMode\\FrmMain.cs [\u30C7\u30B6\u30A4\u30F3]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-02-20T20:44:42.798Z",
+              "EditorCaption": " [\u30C7\u30B6\u30A4\u30F3]"
             }
           ]
         },
@@ -221,7 +246,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "CursorManager.cs",
               "DocumentMoniker": "D:\\Visual Studio\\LockdownMode\\src\\LockdownMode\\CursorManager.cs",
               "RelativeDocumentMoniker": "src\\LockdownMode\\CursorManager.cs",
