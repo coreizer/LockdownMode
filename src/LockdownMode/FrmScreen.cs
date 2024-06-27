@@ -19,21 +19,19 @@
 
 #endregion
 
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace LockdownMode
 {
-   using System;
-   using System.Drawing;
-   using System.Windows.Forms;
-
    public partial class FrmScreen : Form
    {
-      public FrmScreen()
-      {
+      public FrmScreen() {
          this.InitializeComponent();
       }
 
-      private void FrmScreen_Load(object sender, EventArgs e)
-      {
+      private void FrmScreen_Load(object sender, EventArgs e) {
          this.pictureBox1.Location = new Point(
            (this.Width - this.pictureBox1.Width) / 2,
            (this.Height - this.pictureBox1.Height) / 2

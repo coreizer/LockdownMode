@@ -19,16 +19,16 @@
 
 #endregion
 
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+
 namespace LockdownMode
 {
-   using System;
-   using System.Collections.Generic;
-   using System.ComponentModel;
-   using System.Linq;
-   using System.Reflection;
-   using System.Runtime.InteropServices;
-   using System.Windows.Forms;
-
    public partial class FrmMain : Form
    {
       private readonly CursorManager cursor = new CursorManager();
@@ -38,14 +38,12 @@ namespace LockdownMode
       private NativeMethods.HookProc keyTrigger;
       private KeyState keyState = new KeyState();
 
-      public FrmMain()
-      {
+      public FrmMain() {
          this.InitializeComponent();
          this.Text = $"{Application.ProductName} by coreizer | {Application.ProductVersion}";
       }
 
-      private bool KeyboardHook()
-      {
+      private bool KeyboardHook() {
          try {
             if (this.hookPtr != IntPtr.Zero) NativeMethods.UnhookWindowsHookEx(this.hookPtr);
 
@@ -64,8 +62,7 @@ namespace LockdownMode
          return false;
       }
 
-      private int HookCallback(int nCode, IntPtr wParam, IntPtr lParam)
-      {
+      private int HookCallback(int nCode, IntPtr wParam, IntPtr lParam) {
          if (nCode < 0) return NativeMethods.CallNextHookEx(this.hookPtr, nCode, wParam, lParam);
 
          var osVersion = Environment.OSVersion;
@@ -107,8 +104,7 @@ namespace LockdownMode
          return -1;
       }
 
-      public void ScreenUnlock()
-      {
+      public void ScreenUnlock() {
          if (this.hookPtr != IntPtr.Zero) NativeMethods.UnhookWindowsHookEx(this.hookPtr);
 
          this.timerCursor.Stop();
@@ -118,8 +114,7 @@ namespace LockdownMode
          this.Show();
       }
 
-      private void buttonLockdownMode_Click(object sender, EventArgs e)
-      {
+      private void buttonLockdownMode_Click(object sender, EventArgs e) {
          try {
             if (this.KeyboardHook()) {
                this.Hide();
@@ -139,8 +134,7 @@ namespace LockdownMode
          }
       }
 
-      public void Monitors()
-      {
+      public void Monitors() {
          this.monitors.Clear();
          Screen.AllScreens.ToList().ForEach(x => {
             var formScreen = new FrmScreen() { Bounds = x.Bounds };
@@ -155,13 +149,11 @@ namespace LockdownMode
       private void TimerCursor_Tick(object sender, EventArgs e) =>
          this.cursor.LeftMost();
 
-      private void AboutToolStripMenuItem_Click(object sender, EventArgs e)
-      {
+      private void AboutToolStripMenuItem_Click(object sender, EventArgs e) {
          MessageBox.Show($"バージョン: {Application.ProductVersion}", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
       }
 
-      protected override void OnClosing(CancelEventArgs e)
-      {
+      protected override void OnClosing(CancelEventArgs e) {
          if (this.hookPtr != IntPtr.Zero) NativeMethods.UnhookWindowsHookEx(this.hookPtr);
          base.OnClosing(e);
       }

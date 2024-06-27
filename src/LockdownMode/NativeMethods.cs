@@ -19,12 +19,12 @@
 
 #endregion
 
+using System;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
+
 namespace LockdownMode
 {
-   using System;
-   using System.Runtime.InteropServices;
-   using System.Runtime.Versioning;
-
    public class NativeMethods
    {
       public delegate int HookProc(int nCode, IntPtr wParam, IntPtr lParam);

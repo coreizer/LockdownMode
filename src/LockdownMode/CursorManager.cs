@@ -19,17 +19,16 @@
 
 #endregion
 
+using System;
+using System.Drawing;
+
 namespace LockdownMode
 {
-   using System;
-   using System.Drawing;
-
    public sealed class CursorManager
    {
       private Point leftMost = new Point(0, 0);
 
-      public Point Position
-      {
+      public Point Position {
          get {
             var point = new LPPOINT();
             NativeMethods.GetCursorPos(point);
@@ -42,8 +41,7 @@ namespace LockdownMode
 
       public void LeftMost() => this.Position = this.leftMost;
 
-      public Point SetCursorPosition
-      {
+      public Point SetCursorPosition {
          set {
             if (value == null) throw new ArgumentNullException(nameof(value));
             this.Point = value;
@@ -54,14 +52,12 @@ namespace LockdownMode
 
       public CursorManager(Point point) => this.Point = point;
 
-      public void Show()
-      {
+      public void Show() {
          NativeMethods.SetCursorPos(this.Point.X, this.Point.Y);
          NativeMethods.ShowCursor(true);
       }
 
-      public void Hide()
-      {
+      public void Hide() {
          this.Point = this.Position;
          NativeMethods.ShowCursor(false);
       }
